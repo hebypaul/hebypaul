@@ -10,7 +10,7 @@
 <a href="https://instagram.com/heby_paul" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="heby_paul" height="30" width="40" /></a>
 </p>
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=hebypaul&show_icons=true&locale=en&layout=compact" alt="hebypaul" /></p>
+
 
 
 
