@@ -4,5 +4,4 @@
 <p align= "center" >
  <img src="https://github-readme-stats.vercel.app/api?username=hebypaul&amp;theme=dark&amp;hide_border=false&amp;include_all_commits=true&amp;count_private=true" alt=""> 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=hebypaul&amp;theme=dark&amp;hide_border=false" alt="">
- <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hebypaul&amp;theme=dark&amp;hide_border=false&amp;include_all_commits=true&amp;count_private=true&amp;layout=compact" alt=""> 
 </p>
