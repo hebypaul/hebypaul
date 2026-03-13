@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="120">
+  <rect width="100%" height="100%" fill="#0d1117"/>
+
+  <text x="20" y="30" fill="#58a6ff" font-size="20">
+    Coding Output
+  </text>
+
+  <text x="20" y="60" fill="#c9d1d9" font-size="16">
+    Today: 70 LOC
+  </text>
+
+  <text x="20" y="85" fill="#c9d1d9" font-size="16">
+    Week: 70 LOC
+  </text>
+
+  <text x="20" y="110" fill="#c9d1d9" font-size="16">
+    Month: 70 LOC
+  </text>
+</svg>
