@@ -2,7 +2,7 @@ name: GitHub Metrics
 
 on:
   schedule:
-    - cron: "0 2 * * *"   # Runs daily at 2 AM
+    - cron: "0 2 * * *"
   workflow_dispatch:
 
 permissions:
@@ -18,31 +18,23 @@ jobs:
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
-          # Output SVG
           filename: github-metrics.svg
 
-          # Disable default dashboard
-          base: ""
+          # Minimal base section required for rendering
+          base: header
 
-          # Focus only on your own repositories
+          # Restrict repository scope
           repositories_affiliations: owner
           repositories_forks: no
 
-          # Lines of Code plugin
+          # Lines of code plugin
           plugin_lines: yes
           plugin_lines_sections: base
 
-          # Reduce API usage
+          # Rate-limit protection
           plugin_lines_repositories_limit: 3
           plugin_lines_history_limit: 1
           plugin_lines_delay: 2
 
-          # Skip irrelevant repositories if needed
-          plugin_lines_skipped: |
-            hebypaul/hebypaul
-
-          # Timezone
           config_timezone: Asia/Kolkata
-
-          # Reduce rendering overhead
           config_animations: no
