@@ -1,0 +1,106 @@
+name: LOC Metrics
+
+on:
+  schedule:
+    - cron: "0 2 * * *"   # runs daily at 2 AM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  calculate-loc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get install jq -y
+
+      - name: Calculate LOC metrics
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+
+          USER="hebypaul"
+
+          TODAY=$(date -u +"%Y-%m-%d")
+          WEEK=$(date -u -d "7 days ago" +"%Y-%m-%d")
+          MONTH=$(date -u +"%Y-%m-01")
+
+          calc_loc () {
+
+            START=$1
+
+            COMMITS=$(curl -s \
+              -H "Authorization: token $GH_TOKEN" \
+              "https://api.github.com/search/commits?q=author:$USER+committer-date:>=$START" \
+              -H "Accept: application/vnd.github.cloak-preview" \
+              | jq -r '.items[].url')
+
+            ADD=0
+            DEL=0
+
+            for url in $COMMITS
+            do
+              DATA=$(curl -s -H "Authorization: token $GH_TOKEN" $url)
+
+              A=$(echo $DATA | jq '.stats.additions')
+              D=$(echo $DATA | jq '.stats.deletions')
+
+              ADD=$((ADD + A))
+              DEL=$((DEL + D))
+            done
+
+            NET=$((ADD - DEL))
+
+            echo "$ADD $DEL $NET"
+          }
+
+          TODAY_STATS=$(calc_loc $TODAY)
+          WEEK_STATS=$(calc_loc $WEEK)
+          MONTH_STATS=$(calc_loc $MONTH)
+
+          echo "TODAY_ADD=$(echo $TODAY_STATS | awk '{print $1}')" >> $GITHUB_ENV
+          echo "TODAY_DEL=$(echo $TODAY_STATS | awk '{print $2}')" >> $GITHUB_ENV
+          echo "TODAY_NET=$(echo $TODAY_STATS | awk '{print $3}')" >> $GITHUB_ENV
+
+          echo "WEEK_NET=$(echo $WEEK_STATS | awk '{print $3}')" >> $GITHUB_ENV
+          echo "MONTH_NET=$(echo $MONTH_STATS | awk '{print $3}')" >> $GITHUB_ENV
+
+      - name: Generate SVG
+        run: |
+
+          cat <<EOF > loc-stats.svg
+          <svg xmlns="http://www.w3.org/2000/svg" width="420" height="120">
+            <rect width="100%" height="100%" fill="#0d1117"/>
+
+            <text x="20" y="30" fill="#58a6ff" font-size="20">
+              Coding Output
+            </text>
+
+            <text x="20" y="60" fill="#c9d1d9" font-size="16">
+              Today: ${TODAY_NET} LOC
+            </text>
+
+            <text x="20" y="85" fill="#c9d1d9" font-size="16">
+              Week: ${WEEK_NET} LOC
+            </text>
+
+            <text x="20" y="110" fill="#c9d1d9" font-size="16">
+              Month: ${MONTH_NET} LOC
+            </text>
+          </svg>
+          EOF
+
+      - name: Commit SVG
+        run: |
+
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+
+          git add loc-stats.svg
+          git commit -m "update LOC stats" || exit 0
+          git push
