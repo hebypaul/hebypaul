@@ -1,0 +1,19 @@
+name: Metrics
+on:
+  schedule: [{cron: "0 0 * * *"}] # Updates every night
+  workflow_dispatch:              # Allows you to run it manually
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          # You will need to create this secret (see step 3)
+          token: ${{ secrets.METRICS_TOKEN }}
+          
+          # Core config
+          base: ""
+          plugin_lines: yes
+          # This is where we filter out the noise
+          plugin_lines_ignored: package-lock.json, package.json, dist/*, .next/*, vendor/*
+          plugin_lines_sections: base
