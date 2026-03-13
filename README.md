@@ -9,20 +9,62 @@
   </a>
 </p>
 
+
 <p align="center">
-  <strong>Frontend Developer | Backend Developer | Open Source Enthusiast | Building Vangraph</strong>
+  <strong>Fullstack Developer | Open Source Enthusiast | Building Vangraph</strong>
 </p>
 
-<br>
+---
 
 ### 🚀 About Me
 
-I am a Full Stack developer focused on building frontend, scalable backend systems and AI-driven productivity tools.
+I am a Full Stack developer based in Kochi, focused on building scalable systems and AI-driven productivity tools.
 
-- 🛠️ **Current Project:** Building **Vangraph**, a Jira-like project management tool for efficient workflows.
-- 🧠 **Interests:** Data Structures, Algorithms, and AI agents (MCP, Tambo).
-- 🐧 **Environment:** Linux & VirtualBox enthusiast.
+- 🛠️ **Current Project:** [Vangraph](https://github.com/hebypaul/Vangraph) — An agentic project management tool built with Tambo and Supabase.
+- 🧠 **Interests:** Agentic Engineering, MCP, and LangGraph.
+- 🐧 **Environment:** Linux enthusiast and VirtualBox power user.
 
+---
+
+### 📊 Performance & GitHub Metrics
+
+![Lines of Code](https://raw.githubusercontent.com/hebypaul/hebypaul/main/github-metrics.svg)
+
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=hebypaul&theme=tokyonight&hide_border=true" alt="Heby's Streak Stats" />
+  
+  <br>
+
+  <img src="https://github-readme-stats.vercel.app/api?username=hebypaul&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="Heby's GitHub Stats" />
+
+  <br>
+
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hebypaul&layout=compact&theme=tokyonight&hide_border=true&langs_count=6" alt="Top Languages" />
+</div>
+
+
+
+---
+
+### 🌐 Open Source Contributions
+
+I actively contribute to major **COSS** (Commercial Open Source) projects:
+
+| Project | Focus Area |
+| :--- | :--- |
+| **[Activepieces](https://github.com/activepieces/activepieces)** | Workflow automation and business logic. |
+| **[SigNoz](https://github.com/SigNoz/signoz)** | Observability and monitoring. |
+| **[Meshery](https://github.com/meshery/meshery)** | Cloud-native management. |
+| **[Accomplish](https://github.com/accomplish-app/accomplish)** | Productivity and task management. |
+
+---
+
+### 💻 Technical Expertise
+
+- **Languages:** TypeScript, Python, JavaScript, SQL.
+- **Frontend:** Next.js, React, Tailwind CSS.
+- **Backend:** Node.js, Supabase, PostgreSQL, Redis.
+- **AI/Agents:** MCP, Tambo, LangGraph.
 
 ---
 
