@@ -6,14 +6,14 @@
   </text>
 
   <text x="20" y="60" fill="#c9d1d9" font-size="16">
-    Today: 70 LOC
+    Today: 0 LOC
   </text>
 
   <text x="20" y="85" fill="#c9d1d9" font-size="16">
-    Week: 70 LOC
+    Week: 176 LOC
   </text>
 
   <text x="20" y="110" fill="#c9d1d9" font-size="16">
-    Month: 70 LOC
+    Month: 176 LOC
   </text>
 </svg>
