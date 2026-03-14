@@ -1,0 +1,91 @@
+name: LOC Dashboard
+
+on:
+  schedule:
+    - cron: "30 20 * * *"   # Runs daily at 2:00 AM IST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  loc-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository with full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Compute LOC metrics
+        run: |
+
+          AUTHOR="hebypaul"
+
+          # Only count meaningful source files
+          FILE_FILTER="*.ts *.tsx *.js *.jsx *.py *.sql *.css *.md"
+
+          # Exclude generated or dependency files
+          EXCLUDES=":(exclude)dist :(exclude).next :(exclude)node_modules :(exclude)build :(exclude)coverage :(exclude)package.json :(exclude)package-lock.json :(exclude)pnpm-lock.yaml :(exclude)yarn.lock :(exclude)*.min.js"
+
+          today=$(git log --since="today" --author="$AUTHOR" --numstat --pretty=tformat: -- $FILE_FILTER $EXCLUDES \
+            | awk '{add+=$1; del+=$2} END {print add,del}')
+
+          week=$(git log --since="7 days ago" --author="$AUTHOR" --numstat --pretty=tformat: -- $FILE_FILTER $EXCLUDES \
+            | awk '{add+=$1; del+=$2} END {print add,del}')
+
+          month=$(git log --since="30 days ago" --author="$AUTHOR" --numstat --pretty=tformat: -- $FILE_FILTER $EXCLUDES \
+            | awk '{add+=$1; del+=$2} END {print add,del}')
+
+          TODAY_ADD=$(echo $today | cut -d' ' -f1)
+          TODAY_DEL=$(echo $today | cut -d' ' -f2)
+
+          WEEK_ADD=$(echo $week | cut -d' ' -f1)
+          WEEK_DEL=$(echo $week | cut -d' ' -f2)
+
+          MONTH_ADD=$(echo $month | cut -d' ' -f1)
+          MONTH_DEL=$(echo $month | cut -d' ' -f2)
+
+          TODAY_NET=$((TODAY_ADD-TODAY_DEL))
+          WEEK_NET=$((WEEK_ADD-WEEK_DEL))
+          MONTH_NET=$((MONTH_ADD-MONTH_DEL))
+
+          echo "TODAY_NET=$TODAY_NET" >> $GITHUB_ENV
+          echo "WEEK_NET=$WEEK_NET" >> $GITHUB_ENV
+          echo "MONTH_NET=$MONTH_NET" >> $GITHUB_ENV
+
+      - name: Generate SVG dashboard
+        run: |
+
+          cat <<EOF > loc-dashboard.svg
+          <svg xmlns="http://www.w3.org/2000/svg" width="420" height="150">
+            <rect width="100%" height="100%" fill="#0d1117"/>
+
+            <text x="20" y="30" fill="#58a6ff" font-size="20" font-family="Arial">
+              Coding Output
+            </text>
+
+            <text x="20" y="65" fill="#c9d1d9" font-size="16">
+              Today: ${TODAY_NET} LOC
+            </text>
+
+            <text x="20" y="95" fill="#c9d1d9" font-size="16">
+              Week: ${WEEK_NET} LOC
+            </text>
+
+            <text x="20" y="125" fill="#c9d1d9" font-size="16">
+              Month: ${MONTH_NET} LOC
+            </text>
+          </svg>
+          EOF
+
+      - name: Commit updated dashboard
+        run: |
+
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+
+          git add loc-dashboard.svg
+          git commit -m "update LOC dashboard" || exit 0
+          git push
