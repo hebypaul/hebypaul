@@ -30,6 +30,12 @@ I am a Full Stack developer based in Kochi, focused on building scalable systems
 
 ![Lines of Code](https://raw.githubusercontent.com/hebypaul/hebypaul/main/github-metrics.svg)
 
+This metric is calculated locally from commit diffs using git.
+Generated files and dependency manifests are excluded.
+
+![LOC Dashboard](https://raw.githubusercontent.com/hebypaul/hebypaul/main/loc-dashboard.svg)
+
+
 <div align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=hebypaul&theme=tokyonight&hide_border=true" alt="Heby's Streak Stats" />
   
