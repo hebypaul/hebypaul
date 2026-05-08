@@ -11,7 +11,7 @@
 
 
 <p align="center">
-  <strong>Fullstack Developer | Open Source Enthusiast | Building Vangraph</strong>
+  <strong>Fullstack Developer | Open Source Enthusiast </strong>
 </p>
 
 ---
@@ -50,18 +50,7 @@ Generated files and dependency manifests are excluded.
 
 
 
----
 
-### 🌐 Open Source Contributions
-
-I actively contribute to major **COSS** (Commercial Open Source) projects:
-
-| Project | Focus Area |
-| :--- | :--- |
-| **[Activepieces](https://github.com/activepieces/activepieces)** | Workflow automation and business logic. |
-| **[SigNoz](https://github.com/SigNoz/signoz)** | Observability and monitoring. |
-| **[Meshery](https://github.com/meshery/meshery)** | Cloud-native management. |
-| **[Accomplish](https://github.com/accomplish-app/accomplish)** | Productivity and task management. |
 
 ---
 
