@@ -19,8 +19,8 @@ I am a Full Stack developer based in Kochi, focused on building scalable infrast
 - 💻 **Tech Stack:** TypeScript, Next.js, Node.js, and modern full-stack architectures.
 - 🐧 **Environment:** Linux enthusiast and VirtualBox power user.
 
-### 📊 Performance & GitHub Metrics
-
+## ⚡ Recent Activity
+## 📊 Performance & GitHub Metrics
 ![Lines of Code](https://raw.githubusercontent.com/hebypaul/hebypaul/main/github-metrics.svg)
 
 This metric is calculated locally from commit diffs using git.
@@ -28,13 +28,6 @@ Generated files and dependency manifests are excluded.
 
 ![LOC Dashboard](https://raw.githubusercontent.com/hebypaul/hebypaul/main/loc-dashboard.svg)
 
-
-## ⚡ Recent Activity
-
-
-
-
-## 📊 Performance & GitHub Metrics
 <div align="center">
   <img src="https://img.shields.io/github/followers/hebypaul?style=for-the-badge&logo=github&color=24292e" alt="Followers" />
   <img src="https://img.shields.io/github/stars/hebypaul?style=for-the-badge&logo=github&color=24292e" alt="Total Stars" />
