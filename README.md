@@ -19,7 +19,6 @@ I am a Full Stack developer based in Kochi, focused on building scalable infrast
 - 💻 **Tech Stack:** TypeScript, Next.js, Node.js, and modern full-stack architectures.
 - 🐧 **Environment:** Linux enthusiast and VirtualBox power user.
 
-## ⚡ Recent Activity
 ## 📊 Performance & GitHub Metrics
 ![Lines of Code](https://raw.githubusercontent.com/hebypaul/hebypaul/main/github-metrics.svg)
 
