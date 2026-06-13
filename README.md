@@ -12,6 +12,7 @@
 ---
 
 ### 🚀 About Me
+
 I am a Full Stack developer based in Kochi, focused on building scalable infrastructure and exploring the next generation of AI tooling. I am deeply passionate about open source and actively involved in the Layer5 community, contributing to cloud-native management systems.
 
 - 🤝 **Open Source Focus:** Active contributor to [Meshery](https://github.com/meshery/meshery), the open source, cloud native manager.
@@ -20,21 +21,14 @@ I am a Full Stack developer based in Kochi, focused on building scalable infrast
 - 🐧 **Environment:** Linux enthusiast and VirtualBox power user.
 
 ## 📊 Performance & GitHub Metrics
-![Lines of Code](https://raw.githubusercontent.com/hebypaul/hebypaul/main/github-metrics.svg)
-
-This metric is calculated locally from commit diffs using git.
-Generated files and dependency manifests are excluded.
-
-![LOC Dashboard](https://raw.githubusercontent.com/hebypaul/hebypaul/main/loc-dashboard.svg)
 
 <div align="center">
   <img src="https://img.shields.io/github/followers/hebypaul?style=for-the-badge&logo=github&color=24292e" alt="Followers" />
   <img src="https://img.shields.io/github/stars/hebypaul?style=for-the-badge&logo=github&color=24292e" alt="Total Stars" />
-  <br><br>
+  <br>
+  <br>
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=hebypaul&theme=tokyonight&hide_border=true" alt="Heby's Streak Stats" />
 </div>
-
-
 
 ---
 
@@ -48,5 +42,6 @@ Generated files and dependency manifests are excluded.
 ---
 
 ### 📫 Connect
+
 - 🐦 **X (Twitter):** [@HebyPaul](https://x.com/HebyPaul)
 - 💼 **LinkedIn:** [hebytpaul](https://linkedin.com/in/hebytpaul)
