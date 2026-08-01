@@ -23,6 +23,15 @@ I am a Full Stack developer based in Kochi, focused on building scalable infrast
 - 🐧 **Environment:** Linux enthusiast and VirtualBox power user.
 
 ---
+### 📊 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=hebypaul&show_icons=true&theme=dark&hide_border=true&v=1" alt="Heby's GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=hebypaul&theme=dark&hide_border=true" alt="Heby's GitHub Streak" />
+</p>
+
+
+---
 
 ### 💻 Technical Expertise
 
